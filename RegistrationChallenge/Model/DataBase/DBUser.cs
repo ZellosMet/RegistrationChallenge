@@ -16,6 +16,7 @@ namespace RegistrationChallenge.Model.DataBase
 
         // api-key в захэшированном виде
         public string ApiKeyHash { get; set; } = string.Empty;
+        // Подтверждение почты
         public bool ConfirmEmail { get; set; } = false;
 
         public DBUser() { }

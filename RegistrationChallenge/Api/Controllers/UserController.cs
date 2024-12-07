@@ -16,7 +16,7 @@ namespace RegistrationChallenge.Api.Controllers
         {
             _users = users;
         }
-
+        //Запрос на регистрацию пользователя
         [HttpPost]
         public async Task<IActionResult> RegisterAsync(UserRegistrationMessage registrationMessage)
         {
@@ -39,7 +39,7 @@ namespace RegistrationChallenge.Api.Controllers
                 return Conflict(error);
             }
         }
-
+        //Запрос на получение пользователя
         [HttpGet]
         public async Task<IActionResult> GetAsync([FromHeader(Name = "X-Api-Key")] string apiKey)
         {
@@ -61,6 +61,7 @@ namespace RegistrationChallenge.Api.Controllers
                 return NotFound(error);
             }
         }
+        //Запрос на подтверждение почты пользователя
         [HttpGet("{id}")]
         public async Task<IActionResult> ConfirEmailAsync(string id)
         {
